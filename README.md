@@ -1,63 +1,63 @@
-# Simple Digital Watchface for Pebble
+Simple Digital Watchface for Pebble
 
 A clean and simple digital watchface for Pebble smartwatches.
 
-## Features
+Setup and Run Instructions
 
-- Large, easy-to-read time display (12/24 hour format based on watch settings)
-- Date display (day of week, day, month)
-- Battery percentage indicator
+Follow these steps to get your environment ready, build, and run the watchface.
 
-## Building
+1. Install dependencies
+sudo apt update
+sudo apt install python3-pip python3-venv nodejs npm libsdl1.2debian libfdt1 unzip
 
-1. Install the [Pebble SDK](https://developer.pebble.com/sdk/)
-2. Build the watchface:
-   ```bash
-   pebble build
-   ```
-
-## Running on Emulator
-
-To test the watchface on the Pebble emulator:
-
-1. Build the watchface (see above)
-2. Install on emulator:
-   ```bash
-   pebble install --emulator aplite
-   ```
-   Or for Pebble Time (color):
-   ```bash
-   pebble install --emulator basalt
-   ```
-   Or for Pebble Time Round:
-   ```bash
-   pebble install --emulator chalk
-   ```
-
-3. The emulator window will open automatically showing your watchface
-
-**Note:** If the emulator doesn't launch automatically, you may need to start it manually. The `pebble install --emulator` command should handle this, but if needed, you can also use the Pebble SDK's emulator controls like `pebble emu-control` to interact with the emulator.
-
-## Installing on Physical Watch
-
-Install on your watch:
-```bash
-pebble install --phone <your-phone-ip>
-```
-
-## Requirements
-
-- Pebble SDK 3.0 or later
-- Compatible with Pebble Classic, Pebble Time, and Pebble Time Round
-
-Step 1- Install the dependencies
-sudo apt install python3-pip python3-venv nodejs npm libsdl1.2debian libfdt1
-Step 2 - Install UV Package manager
+2. Install UV Package Manager
 sudo snap install astral-uv --classic
-Step 3 - Install the Pebble SDK - https://developer.rebble.io/sdk/
-	uv tool install pebble-tool
-Step 4 - Install download & unzip the example repo from github
-https://github.com/richardbwest/pebble_digital_watchface
-Step 5 - Run the watchface (do from inside the main project folder)
-pebble install --emulator diorite #Install to emulator 
-pebble install --phone 192.168.1.100 #install to watch
+
+3. Install the Pebble SDK
+
+Follow instructions here: Rebble SDK
+
+uv tool install pebble-tool
+
+4. Download the example repository
+Option A: Using Git
+git clone https://github.com/richardbwest/pebble_digital_watchface
+cd pebble_digital_watchface
+
+Option B: Using wget
+wget https://github.com/richardbwest/pebble_digital_watchface/archive/refs/heads/main.zip -O pebble_digital_watchface.zip
+unzip pebble_digital_watchface.zip
+cd pebble_digital_watchface-main
+
+5. Build the watchface
+pebble build
+
+6. Install and Run
+
+On Emulator:
+
+pebble install --emulator diorite   # Generic Pebble emulator
+pebble install --emulator aplite    # Pebble Classic
+pebble install --emulator basalt    # Pebble Time (color)
+pebble install --emulator chalk     # Pebble Time Round
+
+
+On Physical Watch:
+Replace <your-watch-ip> with your phone/watch IP:
+
+pebble install --phone <your-watch-ip>
+
+
+Note: If the emulator doesn’t launch automatically, you can also use pebble emu-control to interact with it manually.
+
+Features
+
+Large, easy-to-read time display (12/24 hour format based on watch settings)
+
+Date display (day of week, day, month)
+
+Battery percentage indicator
+
+Requirements
+
+Pebble SDK 3.0 or later
