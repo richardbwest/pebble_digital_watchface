@@ -50,3 +50,14 @@ pebble install --phone <your-phone-ip>
 - Pebble SDK 3.0 or later
 - Compatible with Pebble Classic, Pebble Time, and Pebble Time Round
 
+Step 1- Install the dependencies
+sudo apt install python3-pip python3-venv nodejs npm libsdl1.2debian libfdt1
+Step 2 - Install UV Package manager
+sudo snap install astral-uv --classic
+Step 3 - Install the Pebble SDK - https://developer.rebble.io/sdk/
+	uv tool install pebble-tool
+Step 4 - Install download & unzip the example repo from github
+https://github.com/richardbwest/pebble_digital_watchface
+Step 5 - Run the watchface (do from inside the main project folder)
+pebble install --emulator diorite #Install to emulator 
+pebble install --phone 192.168.1.100 #install to watch
