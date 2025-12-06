@@ -1,4 +1,5 @@
 #include <pebble.h>
+#include <time.h>
 
 // Main window pointer
 static Window *s_main_window;
