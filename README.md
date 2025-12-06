@@ -3,7 +3,8 @@
 ## Step 1 - Install Dependencies
 
 ```bash
-sudo apt install python3-pip python3-venv nodejs npm libsdl1.2debian libfdt1 ninja-build
+sudo apt update
+sudo apt install python3-pip python3-venv nodejs npm libsdl1.2debian libfdt1 ninja-build libglib2.0-dev flex gcc-arm-none-eabi-gcc
 ```
 
 ## Step 2 - Install UV Package Manager (Non-Ubuntu)
