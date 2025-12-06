@@ -23,32 +23,19 @@ Follow the instructions at: [Pebble SDK](https://developer.rebble.io/sdk/)
 uv tool install pebble-tool
 ```
 
-## Step 4 - Enable Developer Connection on Your Pebble Watch
-
-1. Open the Pebble app on your phone.
-2. Navigate to **Settings → Developer → Enable Developer Connection**.
-3. Note the IP address displayed under the developer connection settings. This is needed to install apps directly to your watch.
-
-## Step 5 - Install QEMU Emulator (Optional)
-
-```bash
-git clone https://gitlab.com/qemu-project/qemu.git
-cd qemu
-./configure
-make
-```
-
-## Step 6 - Download & Unzip Example Repository
+## Step 4 - Download & Unzip Example Repository
 
 Example repo: [pebble_digital_watchface](https://github.com/richardbwest/pebble_digital_watchface)
 
-## Step 7 - Build the App
+
+
+## Step 5 - Build the App
 
 ```bash
 pebble build
 ```
 
-## Step 8 - Run the Watchface
+## Step 6 - Run the Watchface on the EMU
 
 > Run from inside the main project folder
 
@@ -57,8 +44,15 @@ pebble build
 ```bash
 pebble install --emulator diorite
 ```
+## Step 7 - Enable Developer Connection on Your Pebble Watch
 
-* To install on a phone:
+1. Open the Pebble app on your phone.
+2. Navigate to **Settings → Developer → Enable Developer Connection**.
+3. Note the IP address displayed under the developer connection settings. This is needed to install apps directly to your watch.
+
+## Step 8 - Install the app on your watch via your phone
+
+* To install on your watch via the phone:
 
 ```bash
 pebble install --phone 192.168.1.100
